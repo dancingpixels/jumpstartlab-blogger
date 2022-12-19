@@ -1,0 +1,13 @@
+<h1>Tags:</h1>
+<% @tags.each do |tag| %>
+  <li> 
+  	<%= link_to tag.name, tag_path(tag)%> -
+  	<%= link_to "delete", tag_path(tag), data: {
+  		turbo_method: :delete, turbo_confirm: "Are you sure?"
+  	} %> 
+  </li>
+<% end %>
+
+<br>
+
+<%= link_to "Back to All Articles", root_path %>
